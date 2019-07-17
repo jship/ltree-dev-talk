@@ -28,6 +28,10 @@ select text2ltree('Foo.Bar');
 -- Ltree value can be converted to text.
 select ltree2text('Foo.Bar');
 
+-- These conversions can also be done via casts:
+select ('Foo.Bar'::text)::ltree;
+select ('Foo.Bar'::ltree)::text;
+
 -- Let's say we had the above three ltree values in our DB somehow (we'll see how later!).
 -- Conceptually, we can think of the tree representation as:
 --   Foo
